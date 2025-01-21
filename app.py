@@ -16,8 +16,11 @@ if uploaded_file:
     st.dataframe(data.head())
 
     # Ensure required columns exist
-    required_columns = ['Market', 'Clicks', 'Impressions', 'Cost', 'Leads_Number', 'CTR']
+    required_columns = ['Market', 'Clicks', 'Impressions', 'Cost', 'Leads Number', 'CTR']
     if all(col in data.columns for col in required_columns):
+        # Rename columns for consistency
+        data.rename(columns={'Leads Number': 'Leads_Number'}, inplace=True)
+
         # Calculate key metrics
         data['CTR'] = data['CTR'] * 100  # Convert CTR to percentage
         data['CPC'] = data['Cost'] / data['Clicks']
