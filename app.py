@@ -4,7 +4,7 @@ import plotly.express as px
 
 # App title
 st.title("DHL SEA Campaign Analysis Dashboard")
-st.markdown("**Confidential SEA Campaign Data Analysis**")
+st.markdown("**SEA Campaign Data Analysis**")
 
 # File upload section
 uploaded_file = st.file_uploader("Upload CSV File", type=["csv"])
